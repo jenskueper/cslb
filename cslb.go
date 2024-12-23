@@ -223,6 +223,12 @@ func NewWithConfig(cfg Config) *cslb {
 	return t
 }
 
+func (t *cslb) Enable(ht *http.Transport) *http.Transport {
+	ht.DialContext = t.dialContext
+
+	return ht
+}
+
 // start starts up the cache cleaners and optionally the status web server. It is called *after* all
 // Config settings have been over-ridden so as to avoid any race conditions - particularly with
 // tests.
