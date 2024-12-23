@@ -1,3 +1,1 @@
-module github.com/markdingo/cslb
-
-go 1.21
+module github.com/jenskueper/cslb
